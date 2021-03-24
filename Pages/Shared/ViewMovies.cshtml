@@ -1,0 +1,50 @@
+﻿@page
+@model IEnumerable<Assignment9.Models.addMovie>
+
+
+@using Assignment9.Infrastructure 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author First Name</th>
+            <th>Middle Initial</th>
+            <th>Author Last Name</th>
+            <th>Publisher</th>
+            <th>ISBN</th>
+            <th>Classification</th>
+            <th>Category</th>
+            <th>Delete</th>
+            
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var line in Model)
+        {
+        <tr>
+            <td data-th="Title">@line.Title</td>
+            <td data-th="Author First Name">@line.Year</td>
+            <td data-th="Middle Initial">@line.DirectorFName</td>
+            <td data-th="Author Last Name">@line.DirectorLName</td>
+            <td data-th="Publisher">@line.Rating</td>
+            <td data-th="ISBN">@line.Edited</td>
+            <td data-th="Classification">@line.LentTo</td>
+            <td data-th="Category">@line.Notes</td>
+            <td>
+                <form id="@line.MovieID" asp-page="/ViewMovies" method="post">
+                    <input type="hidden" asp-for="MovieID" />
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                    <span class="card-text p-1">
+                        
+                        <button type="submit" class="btn-success">Delete</button>
+                    </span>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+

@@ -1,0 +1,58 @@
+﻿
+@{
+}
+@model Assignment9.Models.addMovie
+<form asp-action="AddMovies" method="post">
+    <label asp-for="Title">
+        Title
+    </label>
+    <input type="text" asp-for="Title" />
+    <br />
+    <label asp-for="Category">
+        Category
+    </label>
+    <input type="text" asp-for="Category" />
+    <br />
+    <label asp-for="Year">
+        Year
+    </label>
+    <input type="text" asp-for="Year" />
+    <br />
+    <label asp-for="DirectorFName">
+        DirectorFName
+    </label>
+    <input type="text" asp-for="DirectorFName" />
+    <br />
+    <label asp-for="DirectorLName">
+        DirectorLName
+    </label>
+    <input type="text" asp-for="DirectorLName" />
+    <br />
+    <label asp-for="Rating">Rating: </label>
+    <select asp-for="Rating">
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+    </select>
+    <br />
+    <label asp-for="Edited">Edited (yes/no): </label>
+    <select asp-for="Edited">
+        <option value="true"> YES</option>
+        <option value="false"> NO</option>
+    </select>
+    <br />
+    <label asp-for="LentTo">
+        LentTo
+    </label>
+    <input type="text" asp-for="LentTo" />
+    <br />
+    <label asp-for="Notes">
+        Notes
+    </label>
+    <input type="text" asp-for="Notes" />
+    <br />
+    <button type="submit" id="button">Submit it</button>
+    <div asp-validation-summary="All"></div>
+
+</form>
