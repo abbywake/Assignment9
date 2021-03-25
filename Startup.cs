@@ -39,8 +39,8 @@ namespace Assignment9
                 options.UseSqlite("Data Source=MovieDB.sqlite"));
 
             services.AddRazorPages();
-            services.AddScoped<Display>(sp => SessionDisplay.GetDisplay(sp));
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            //services.AddScoped<Display>(sp => SessionDisplay.GetDisplay(sp));
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDistributedMemoryCache();
 

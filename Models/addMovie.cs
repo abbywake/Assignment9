@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Assignment9.Models
+    //making the model and making some of them required 
 {
     public class addMovie
     {

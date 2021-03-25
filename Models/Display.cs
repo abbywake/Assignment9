@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Assignment9.Models
 {
+    //honestly I don't need this anymore but I'm scared to remove it just in case 
     public class Display
     {
         public List<MovieLine> Lines { get; set; } = new List<MovieLine>();

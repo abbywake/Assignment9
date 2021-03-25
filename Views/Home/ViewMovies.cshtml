@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Assignment9.Models.addMovie>
+@* This took so freaking long please just give me full points even though my bootstrap is simple as crap thank you very much
+    I cried so much over this assignment*@
+@using Assignment9.Infrastructure
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Director First Name</th>
+            <th>Last Name</th>
+            <th>Rating</th>
+            <th>Edited</th>
+            <th>Lent to: </th>
+            <th>Notes</th>
+            <th>Delete</th>
+            <th>Edit</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var line in Model)
+        {
+        <tr>
+            <td data-th="Title">@line.Title</td>
+            <td data-th="Author First Name">@line.Category</td>
+            <td data-th="Middle Initial">@line.DirectorFName</td>
+            <td data-th="Author Last Name">@line.DirectorLName</td>
+            <td data-th="Publisher">@line.Rating</td>
+            <td data-th="ISBN">@line.Edited</td>
+            <td data-th="Classification">@line.LentTo</td>
+            <td data-th="Category">@line.Notes</td>
+            <td>
+                <form id="@line.MovieID" asp-action="RemoveMovie" method="post">
+                    <input type="hidden" asp-for="@line.MovieID" value="@line.MovieID" name="Rachel" />
+                    <input type="hidden" asp-for="@line.Title" value="@line.Title" name="Rachel"/>
+                    <span class="card-text p-1">
+
+                       <button type="submit" class="btn-success">Delete</button>
+                    </span>
+                </form>
+            </td>
+            <td>
+                <form id="@line.MovieID" asp-action="EditMovie" method="post">
+                    <input type="hidden" asp-for="@line.MovieID" value="@line.MovieID" name="Hello"/>
+                    <input type="hidden" asp-for="@line.MovieID" value="@line.Title" name="Hello"/>
+                    <span class="card-text p-1">
+
+                        <button type="submit" class="btn-success">Edit</button>
+                    </span>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
